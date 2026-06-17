@@ -6,6 +6,8 @@
 
 <details>
   <summary>Click to expand English README</summary>
+## Overview
+---
     This project provides a systematic benchmark to evaluate how well LLMs understand and respond to questions about **EVE Online**, a complex MMORPG known for its steep learning curve and deep gameplay mechanics.
 
 The evaluation focuses on identifying **specific failure types** rather than just producing average scores:
