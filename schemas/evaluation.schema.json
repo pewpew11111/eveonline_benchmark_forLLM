@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EVE Online Benchmark Evaluation",
+  "type": "object",
+  "required": ["benchmark_version", "evaluation_metadata", "target_model", "results"],
+  "properties": {
+    "benchmark_version": { "type": "string" },
+    "evaluation_metadata": {
+      "type": "object",
+      "required": ["evaluation_date", "patch_reference_date", "judge_model", "calibration_version"],
+      "properties": {
+        "evaluation_date": { "type": "string" },
+        "patch_reference_date": { "type": "string" },
+        "judge_model": { "type": "string" },
+        "calibration_version": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "target_model": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question_id",
+          "scores",
+          "weighted_score_5",
+          "score_100",
+          "error_taxonomy",
+          "reasoning",
+          "rationale_assessment",
+          "strengths",
+          "weaknesses",
+          "feedback",
+          "confidence",
+          "needs_human_review"
+        ],
+        "properties": {
+          "question_id": { "type": "string" },
+          "scores": {
+            "type": "object",
+            "additionalProperties": { "type": "number", "minimum": 0, "maximum": 5 }
+          },
+          "weighted_score_5": { "type": "number", "minimum": 0, "maximum": 5 },
+          "score_100": { "type": "number", "minimum": 0, "maximum": 100 },
+          "error_taxonomy": {
+            "type": "object",
+            "required": [
+              "hallucination",
+              "outdated_info",
+              "wrong_terminology",
+              "mechanic_error",
+              "translation_artifact",
+              "unsafe_advice",
+              "overconfident_answer",
+              "source_omission",
+              "ambiguous_question_missed"
+            ],
+            "properties": {
+              "hallucination": { "type": "boolean" },
+              "outdated_info": { "type": "boolean" },
+              "wrong_terminology": { "type": "boolean" },
+              "mechanic_error": { "type": "boolean" },
+              "translation_artifact": { "type": "boolean" },
+              "unsafe_advice": { "type": "boolean" },
+              "overconfident_answer": { "type": "boolean" },
+              "source_omission": { "type": "boolean" },
+              "ambiguous_question_missed": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          },
+          "reasoning": { "type": "object" },
+          "rationale_assessment": { "type": "object" },
+          "strengths": { "type": "array", "items": { "type": "string" } },
+          "weaknesses": { "type": "array", "items": { "type": "string" } },
+          "feedback": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "needs_human_review": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

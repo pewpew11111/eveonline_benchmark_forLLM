@@ -1,0 +1,22 @@
+{
+  "benchmark_version": "1.0",
+  "calibration_version": "1.0",
+  "items": [
+    {
+      "regression_id": "REG-WH-BAD-001",
+      "source_file": "evaluations/예시1_평가_결과.json",
+      "question_id": "I-EXPLORE-WH01",
+      "expected_behavior": "Both answers must remain below 3.0/5 because they contain hallucinations or critical mechanic errors.",
+      "required_error_flags": ["hallucination", "mechanic_error", "translation_artifact"],
+      "max_allowed_weighted_score_5": 3.0
+    },
+    {
+      "regression_id": "REG-WH-GOOD-001",
+      "source_file": "evaluations/예시2_평가_결과.json",
+      "question_id": "I-EXPLORE-WH01",
+      "expected_behavior": "Both answers should score as Good while still being penalized for missing explicit source/version references.",
+      "required_error_flags": ["source_omission"],
+      "min_expected_weighted_score_5": 3.0
+    }
+  ]
+}

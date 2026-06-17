@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EVE Online Benchmark Aggregate Report",
+  "type": "object",
+  "required": [
+    "benchmark_version",
+    "report_metadata",
+    "models_evaluated",
+    "total_questions",
+    "summary",
+    "failure_rates",
+    "calibration"
+  ],
+  "properties": {
+    "benchmark_version": { "type": "string" },
+    "report_metadata": {
+      "type": "object",
+      "required": ["report_date", "patch_reference_date"],
+      "properties": {
+        "report_date": { "type": "string" },
+        "patch_reference_date": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "models_evaluated": { "type": "array", "items": { "type": "string" } },
+    "total_questions": { "type": "integer", "minimum": 1 },
+    "summary": {
+      "type": "object",
+      "required": ["overall_ranking", "by_main_case", "by_sub_element", "by_difficulty"],
+      "properties": {
+        "overall_ranking": { "type": "array" },
+        "by_main_case": { "type": "object" },
+        "by_sub_element": { "type": "object" },
+        "by_difficulty": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "failure_rates": {
+      "type": "object",
+      "required": [
+        "hallucination_rate",
+        "source_omission_rate",
+        "critical_mechanic_error_rate",
+        "ambiguous_question_missed_rate"
+      ],
+      "properties": {
+        "hallucination_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "source_omission_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "critical_mechanic_error_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "ambiguous_question_missed_rate": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": true
+    },
+    "calibration": {
+      "type": "object",
+      "required": ["manual_eval_mae", "kendall_tau", "regression_passed"],
+      "properties": {
+        "manual_eval_mae": { "type": "number", "minimum": 0 },
+        "kendall_tau": { "type": "number", "minimum": -1, "maximum": 1 },
+        "regression_passed": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

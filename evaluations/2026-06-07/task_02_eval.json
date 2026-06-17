@@ -1,0 +1,135 @@
+{
+  "benchmark_version": "1.0",
+  "evaluation_date": "2026-06-17",
+  "judge_model": "gpt-5.5-mid_annotation (with EVE University Wiki cross-reference)",
+  "question_id": "I-EXPLORE-WH01",
+  "main_case": "INFO",
+  "sub_element": "EXPLORE",
+  "difficulty": "beginner",
+  "question": "이브온라인에서 웜홀 종류는 몇가지가 있지?",
+  "reference_answer_summary": "EVE Online의 웜홀은 (1) 웜홀 공간(W-Space) 클래스 기준: C1~C6 (6종) + C13(Shattered Frigate WH) + Drifter Wormhole Systems 등 특수 케이스, (2) 실제 웜홀 연결 코드 기준: K162, N110, H296 등 수십~수백 종, (3) 통과 크기 기준: Small/Medium/Large/Extra Large 등 다층적으로 분류됨. Thera는 스테이션이 존재하는 고정형 특수 웜홀 시스템.",
+  "evaluations": [
+    {
+      "model_id": "gpt-5.5-instant",
+      "model_answer_label": "A1",
+      "raw_scores": {
+        "accuracy": 4.5,
+        "completeness": 4.5,
+        "source_reference": 0.5,
+        "clarity": 5.0
+      },
+      "weighted_score_5": 3.75,
+      "score_100": 75.0,
+      "final_grade": "Good (4/5)",
+      "errors_detected": [],
+      "rationale": {
+        "accuracy": "C1~C6 분류를 정확히 사용했으며, C13(Shattered Frigate Wormhole)과 Drifter Wormhole Systems를 특수 케이스로 포함시킨 점이 정확합니다. 웜홀 연결 코드(K162, H296, N110, X702 등)가 '수백 종' 존재한다는 설명도 사실에 부합합니다. 다만 Drifter Wormhole Systems를 C1~C6 + C13과 동등한 '웜홀 성계 유형'으로 제시한 것은 미묘하게 부정확할 수 있습니다. Drifter 시스템은 통상적인 W-space 클래스와 달리 시간제한 이벤트성 영역에 가깝고, 일반적인 항행이 불가능한 특수 공간입니다.",
+        "completeness": "웜홀 종류에 대한 다층적 접근이 탁월합니다: (1) 웜홀 공간 클래스, (2) 실제 웜홀 연결 코드, (3) 플레이어들의 일반적 사용례까지 포괄했습니다. 각 코드의 특성(연결 공간, 질량 제한, 수명, 통과 가능 선박 규모)을 함께 설명하여 완성도가 높습니다. Thera가 빠진 것은 소소한缺失이나, '웜홀 성계 유형' 프레임에서 Thera는 C1~C6 같은 클래스와 성격이 달라 의도적 제외일 가능성도 있습니다.",
+        "source_reference": "출처나 패치 버전은 명시되지 않았습니다. '일반적으로'라는 표현은 있으나 구체적 참조는 없습니다.",
+        "clarity": "매우 명확하고 구조화된 답변입니다. 질문의 모호성('종류'의 의미)을 먼저 인지하고, 관점별로 답변을分层하여 제시했습니다. 마지막 요약이 독자의 이해를 돕습니다."
+      },
+      "reasoning": {
+        "structure": 5,
+        "logical_flow": 5,
+        "assumption_quality": 4.5,
+        "consistency": 5,
+        "comment": "질문의 모호성을 먼저 분석하고(메타인지), 분류 기준을 나누어 체계적으로 답변한 점이 뛰어납니다. '종류'의 정의에 따라 답이 달라질 수 있음을 전제하고 각 관점에서 factual하게 설명하여, 독자가 스스로 판단할 수 있도록 합니다. C13과 Drifter를 특수 케이스로 분리한 구성도 논리적입니다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 4,
+        "evidence_validity": 5,
+        "external_reference": 0.5,
+        "comment": "각 주장에 대한 구체적 근거가 제시되었습니다(코드명, 클래스 번호, 특성 설명). 외부 참조는 없으나 정보 자체의 정확성은 검증됨."
+      },
+      "strengths": [
+        "질문의 모호성을 인지하고 다층적으로 답변한 메타인지 능력",
+        "모든 정보가 사실과 일치 (hallucination 제로)",
+        "웜홀 코드가 '수백 종'이라는 현실적 숫자 제시",
+        "요약 섹션으로 핵심만 빠르게 파악 가능"
+      ],
+      "weaknesses": [
+        "Drifter Wormhole Systems를 일반 웜홀 성계 유형과 동등하게 나열한 점이 미묘하게 부정확",
+        "Thera 시스템 언급 누락",
+        "출처/버전 정보 미기재"
+      ],
+      "feedback": "예시1의 답변들과 비교할 때 극적인 개선입니다. Hallucination이 전혀 없고, 모든 정보가 정확하며, 질문의 모호성까지 고려한 메타인지적 접근이 인상적입니다. '좋은 INFO 응답'의 모범 사례에 가깝습니다. 출처 정보(예: 'EVE University Wiki 기준')만 추가되면 Excellent에 도달할 수 있습니다."
+    },
+    {
+      "model_id": "claude-opus-4-8",
+      "model_answer_label": "B1",
+      "raw_scores": {
+        "accuracy": 4.5,
+        "completeness": 4.0,
+        "source_reference": 0.5,
+        "clarity": 4.5
+      },
+      "weighted_score_5": 3.55,
+      "score_100": 71.0,
+      "final_grade": "Good (4/5)",
+      "errors_detected": [],
+      "rationale": {
+        "accuracy": "모든 핵심 정보가 정확합니다. C1~C6 클래스 분류, 저난이도(C1~C3)와 고난이도(C4~C6) 구분, Thera(스테이션이 있는 특수 지역) 설명, Shattered 웜홀(C13 등), Drifter 웜홀, 웜홀 연결 코드(K162, C247, N110)의 특성(목적지/최대 질량/수명/K162) 모두 사실과 일치합니다. '함선 통과 가능 크기 분류'를 추가 분류 축으로 언급한 것도 적절합니다.",
+        "completeness": "웜홀 시스템 클래스 + 연결 코드 + 크기 분류의 세 가지 분류 축을 제시하여 A1과 유사한 다층적 접근을 보여줍니다. 다만 A1이 연결 코드가 '수백 종'이라고 구체적 숫자까지 제시한 반면, B1은 '수십 가지'라고만 하여 상대적으로 덜 구체적입니다. 연결 코드별 특성 표도 A1이 4가지 항목을 제시한 데 비해 B1은 4가지로 동일하나 설명이 약간 더 간결합니다.",
+        "source_reference": "출처나 버전 정보는 명시되지 않았습니다.",
+        "clarity": "구조화가 잘 되어 있고, 마크다운 헤더와 불릿을 효과적으로 사용했습니다. 특히 마지막에 추가 질문을 제시하여 사용자의 의도를 명확히 하려는 시도는 대화형 AI로서 좋은 UX를 제공합니다. 다만 A1의 요약 섹션만큼 핵심 정보를 한눈에 파악하기 쉽지는 않습니다."
+      },
+      "reasoning": {
+        "structure": 4.5,
+        "logical_flow": 4.5,
+        "assumption_quality": 4.5,
+        "consistency": 5,
+        "comment": "질문의 의도를 파악하고 다양한 분류 축을 체계적으로 제시했습니다. A1처럼 명시적으로 '종류의 정의에 따라 답변이 달라진다'고 말하지는 않았지만, 실제로 다른 분류 기준을 제시함으로써 동일한 효과를 냅니다. Low-class/High-class 추가 분류는 초보자에게 유용한 맥락을 제공합니다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 4,
+        "evidence_validity": 5,
+        "external_reference": 0.5,
+        "comment": "각 주장에 대한 근거가 적절히 제시되었고, 정보의 정확성이 검증됨."
+      },
+      "strengths": [
+        "모든 정보가 사실과 일치 (hallucination 제로)",
+        "Low-class/High-class 추가 분류로 난이도 맥락 제공",
+        "Thera를 '스테이션이 있는 특수 지역'으로 정확히 설명",
+        "마지막 추가 질문으로 사용자 맞춤형 응답 유도",
+        "깔끔한 마크다운 구조화"
+      ],
+      "weaknesses": [
+        "연결 코드의 구체적 숫자('수십 가지')가 A1의 '수백 종'보다 덜 정확함 (실제로는 100종 이상으로 '수십'보다 '수백'에 가까움)",
+        "A1에 비해 연결 코드의 상세 설명이 약간 부족",
+        "출처/버전 정보 미기재"
+      ],
+      "feedback": "A1과 마찬가지로 hallucination이 전혀 없이 정확한 정보를 제공합니다. Low-class/High-class 분류와 Thera 설명이 특히 좋습니다. 추가 질문을 통해 사용자의 의도를 clarifing하는 UX는 B1만의 강점입니다. 다만 연결 코드의 숫자('수십 가지')가 실제보다 과소평가되었고('수백 종'이 더 정확), A1에 비해 연결 코드 설명이 상대적으로 간략합니다. 출처 추가 시 Excellent 도달 가능."
+    }
+  ],
+  "comparison_analysis": {
+    "accuracy": {
+      "winner": "A1",
+      "reason": "두 모델 모두 hallucination이 없고 정확하나, A1이 연결 코드의 수('수백 종')를 더 정확하게 제시함."
+    },
+    "completeness": {
+      "winner": "A1 (근소)",
+      "reason": "A1이 연결 코드 설명에서 4가지 구체적 특성을 열거하고 '수백 종'이라는 현실적 숫자를 제시하여 약간 더 상세함. 다만 B1은 Thera를 포함한 점이 장점."
+    },
+    "clarity": {
+      "winner": "A1 (근소)",
+      "reason": "A1의 요약 섹션과 '종류의 정의에 따라 답변이 달라진다'는 메타인지적 접근이 인상적. B1의 추가 질문 UX도 좋지만 핵심 요약 측면에서 A1이 앞섬."
+    },
+    "overall": {
+      "winner": "A1 (75.0 vs 71.0)",
+      "reason": "두 모델 모두 Excellent에 가까운 Good 수준으로, 예시1 대비 극적인 품질 향상. A1이 연결 코드 구체성과 구조화에서 근소하게 우위."
+    }
+  },
+  "judge_summary": "예시1의 답변들과 동일한 질문이지만, 두 모델 모두 hallucination이 전혀 없이 정확하고 체계적인 답변을 제공합니다. 이는 '한국어 EVE Online 리소스 부족'이라는 예시1의 judge_summary에서 지적된 한계가 모델 자체의 문제가 아닌 특정 모델의 문제였음을 시사합니다. A1은 질문의 모호성을 분석하는 메타인지 능력과 구체적 연결 코드 설명에서, B1은 Low-class/High-class 분류와 추가 질문 UX에서 각각 강점을 보입니다. INFO 계열 질문에서 가장 중요한 '정확성'을 두 모델 모두 충족하여, 본 벤치마크의 INFO 카테고리에서 'Good (4/5)' 등급의 좋은 사례를 보여줍니다. 두 모델 모두 출처/버전 정보만 추가된다면 Excellent 등급에 도달할 수 있습니다.",
+  "comparison_with_example1": {
+    "key_difference": "동일한 질문에 대해 예시1의 모델들은 심각한 hallucination을 보인 반면, 예시2의 모델들은 100% 정확한 정보를 제공함. 이는 단순히 '한국어 리소스 부족'이 아닌 특정 모델의 도메인 지식 차이임을 입증.",
+    "improvement_from_example1": "예시1 A1(1.4/5) → 예시2 A1(3.75/5): +2.35점, 예시1 B1(1.3/5) → 예시2 B1(3.55/5): +2.25점으로 대폭 향상."
+  },
+  "factcheck_references": [
+    "EVE University Wiki - Wormholes: https://wiki.eveuniversity.org/Wormholes",
+    "웜홀 클래스: C1~C6 (공식 분류), C13 (Shattered Frigate Wormhole, 특수 케이스)",
+    "Drifter Wormhole Systems: 특수 이벤트성 영역, 통상적 W-space 클래스와 구분됨",
+    "Thera: 스테이션이 존재하는 고정형 특수 웜홀 시스템 (EVE University Wiki 'Thera' 문서)",
+    "웜홀 연결 코드: K162, N110, H296, C247, X702 등 수십~수백 종",
+    "웜홀 연결 특성: 목적지, 최대 질량(Mass), 수명(Lifetime), K162 플래그"
+  ]
+}

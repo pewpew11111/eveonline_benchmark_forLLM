@@ -1,0 +1,137 @@
+{
+  "benchmark_version": "1.0",
+  "evaluation_date": "2026-06-17",
+  "judge_model": "gpt-5.5-mid_annotation (with EVE University Wiki cross-reference)",
+  "question_id": "I-EXPLORE-WH01",
+  "main_case": "INFO",
+  "sub_element": "EXPLORE",
+  "difficulty": "beginner",
+  "question": "이브온라인에서 웜홀 종류는 몇가지가 있지?",
+  "reference_answer_summary": "EVE Online의 웜홀 공간(W-Space)은 C1~C6의 6개 클래스로 분류됩니다. 클래스가 높을수록 더 어렵고 높은 수익을 제공합니다. 또한 Thera(고정형 웜홀 허브), Shattered Wormholes(희귀, C5/C6에 발생) 등의 특수 웜홀이 존재합니다. 웜홀은 질량 제한에 따라 Small/Medium/Large/Extra Large로 크기가 구분되며, 각 W-Space 시스템에는 static 웜홀이 존재합니다.",
+  "evaluations": [
+    {
+      "model_id": "minimax-m2.7",
+      "model_answer_label": "A1",
+      "raw_scores": {
+        "accuracy": 0.5,
+        "completeness": 3.0,
+        "source_reference": 0.0,
+        "clarity": 3.0
+      },
+      "weighted_score_5": 1.4,
+      "score_100": 28.0,
+      "final_grade": "Bad (1/5)",
+      "errors_detected": [
+        "Hallucination: Star color names (화이트 스타, 블루 스타, 레드 스타, 블랙 스타, 마젠타 스타)",
+        "Hallucination: Place names (제이드湾, 우카카)",
+        "Translation_Artifacts: 깨진 문자 (开着)"
+      ],
+      "rationale": {
+        "accuracy": "C1~C6 기본 클래스 분류 프레임은 정확하나, 각 클래스에 '화이트 스타', '블루 스타', '레드 스타', '블랙 스타', '마젠타 스타' 등의 색상 이름을 매핑한 것은 EVE Online에 존재하지 않는 가짜 정보(hallucination)입니다. 실제 EVE University Wiki에 따르면 웜홀 플레어 색상은 크기/목적지를 나타낼 뿐 클래스별 고유 색상명은 없습니다. '제이드湾', '우카카'는 인게임에 존재하지 않는 지명입니다. 또한 '开着' 같은 깨진 한중 혼합 문자가 발견되어 번역 파이프라인 오류가 의심됩니다.",
+        "completeness": "클래스 분류와 함께 Thera(테라), Shattered Wormholes(파편화 웜홀) 등의 특수 웜홀 유형을 추가로 다루고, 수명/질량/항성 유형 등의 속성 비교를 시도하여 정보 범위를 확장하려는 노력이 보입니다. 다만 질량 제한(Mass restriction)의 구체적 분류(Small/Medium/Large/Extra Large)가 누락되었고, Static 웜홀 개념이 빠졌습니다.",
+        "source_reference": "패치 버전, 정보 출처, 참고 자료 등이 전혀 명시되지 않았습니다.",
+        "clarity": "표와 불릿 포인트를 사용한 구조화는 효과적이나, 깨진 문자('开着')와 부정확한 용어 매핑이 가독성을 저해합니다."
+      },
+      "reasoning": {
+        "structure": 3,
+        "logical_flow": 3,
+        "assumption_quality": 1,
+        "consistency": 2,
+        "comment": "클래스→특수→속성 순서로 나름 논리적 구조를 갖추었으나, 핵심 전제(스타 색상명)가 거짓이므로 추론의 기반이 무너짐. C6 설명에 '레드 스타'라고 썼는데 C3도 '레드 스타'로 중복되어 내부 일관성에도 문제가 있음."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 1,
+        "evidence_validity": 1,
+        "external_reference": 0,
+        "comment": "각 주장에 대한 근거나 출처가 전혀 제시되지 않았으며, 제시된 정보의 상당수가 검증 불가능한 허구임."
+      },
+      "strengths": [
+        "C1~C6 분류 체계의 기본 프레임은 올바름",
+        "Thera, Shattered Wormholes 등 특수 유형 언급",
+        "표와 구조화된 레이아웃 사용"
+      ],
+      "weaknesses": [
+        "클래스별 스타 색상 이름이 전부 hallucination",
+        "가짜 지명(제이드湾, 우카카) 생성",
+        "번역 파이프라인 오류로 깨진 문자 발생",
+        "C3와 C6에 '레드 스타' 중복 할당으로 내적 모순"
+      ],
+      "feedback": "C1~C6 분류 자체는 알고 있으나, 구체적인 정보를 생성(generate)하는 과정에서 심각한 hallucination이 발생했습니다. EVE Online에서 웜홀 클래스는 단순히 C1~C6 번호로 구분되며, '화이트 스타' 등의 색상 이름은 공식 분류가 아닙니다. EVE University Wiki(https://wiki.eveuniversity.org/Wormholes)를 참고하여 factual accuracy를 개선해야 합니다."
+    },
+    {
+      "model_id": "ernie-5.1-preview",
+      "model_answer_label": "B1",
+      "raw_scores": {
+        "accuracy": 0.5,
+        "completeness": 2.0,
+        "source_reference": 0.0,
+        "clarity": 5.0
+      },
+      "weighted_score_5": 1.3,
+      "score_100": 26.0,
+      "final_grade": "Bad (1/5)",
+      "errors_detected": [
+        "Hallucination: W1~W6 nomenclature (actual: C1~C6)",
+        "Critical_Mechanic_Error: Ship size restriction vs mass restriction",
+        "Hallucination: Etherium Reach (non-existent wormhole)"
+      ],
+      "rationale": {
+        "accuracy": "가장 심각한 오류는 공식 명칭 C1~C6을 W1~W6로 잘못 표기한 점입니다. 이는 EVE Online에 존재하지 않는 허구 명칭입니다. 또한 '클래스별 허용 함선 크기'를 '프리깃만', '크루저까지' 등으로 단순화하여 설명했는데, 실제로 웜홀은 질량 제한(Mass Restriction)에 따라 Small/Medium/Large/Extra Large로 분류되며 특정 함선 종류를 완전히 차단하지는 않습니다(예: HIC는 피팅에 따라 Small 홀 통과 가능). '에테리움 리치(Etherium Reach)'는 웜홀이 아니라 EVE Online에 존재하지 않는 용어입니다.",
+        "completeness": "연결 유형(하이섹/로우섹/널섹/W-space)에 따른 분류를 시도한 점은 참신하나, 이것은 엄밀히 웜홀 '종류' 분류보다는 '연결 목적지' 분류에 가깝습니다. Thera, Shattered Wormholes 같은 중요한 특수 웜홀이 누락되었고 Static 개념도 없습니다.",
+        "source_reference": "출처나 버전 정보가 전혀 없습니다.",
+        "clarity": "이모지와 표를 활용한 가독성은 매우 뛰어납니다. 친절한 어조와 '💡' 팁 제공은 사용자 경험을 높입니다."
+      },
+      "reasoning": {
+        "structure": 4,
+        "logical_flow": 4,
+        "assumption_quality": 1,
+        "consistency": 2,
+        "comment": "전체 구조는 클래스→연결유형→특수 순서로 잘 짜여졌으나, 핵심 용어(W1~W6)와 개념(함선 크기 제한)이 잘못되어 근본적으로 flawed한 답변입니다. W1~W6는 EVE Online 어디에도 존재하지 않는 분류입니다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 1,
+        "evidence_validity": 1,
+        "external_reference": 0,
+        "comment": "각 주장에 대한 근거가 없으며, 제시된 함선 크기 제한표는 게임 메카닉과 일치하지 않습니다."
+      },
+      "strengths": [
+        "시각적 구성과 가독성이 매우 우수함 (표, 이모지, 섹션 구분)",
+        "연결 유형에 따른 분류 시도는 창의적임",
+        "친절한 톤과 추가 팁 제공"
+      ],
+      "weaknesses": [
+        "C1~C6을 W1~W6로 잘못 표기 (심각한 hallucination)",
+        "웜홀 통과 제한을 질량 기반이 아닌 함선 종류로 잘못 설명 (Critical Mechanic Error)",
+        "Etherium Reach는 존재하지 않는 웜홀 (hallucination)",
+        "Thera, Shattered Wormhole 등 주요 특수 웜홀 누락"
+      ],
+      "feedback": "표면적으로는 정돈되고 가독성 좋은 답변이지만, 핵심 정보가 대부분 잘못되었습니다. 특히 'W1~W6' 명칭은 EVE Online 커뮤니티에서 전혀 사용되지 않는 표현이며, '에테리움 리치'는 완전히 허구입니다. A1이 C1~C6 명칭이라도 정확히 사용한 것과 비교할 때, B1은 명칭조차 틀렸습니다. EVE University Wiki(https://wiki.eveuniversity.org/Wormholes) 참조를 권장합니다."
+    }
+  ],
+  "comparison_analysis": {
+    "accuracy": {
+      "winner": "A1 (minimax-m2.7)",
+      "reason": "A1은 최소한 C1~C6의 올바른 분류 번호를 사용했으나, B1은 W1~W6로 완전히 잘못 표기함. 다만 A1도 스타 색상명을 hallucination한 것은 동일함."
+    },
+    "completeness": {
+      "winner": "A1 (minimax-m2.7)",
+      "reason": "A1이 Thera, Shattered Wormholes, 속성 비교 등 더 다양한 정보를 포함함."
+    },
+    "clarity": {
+      "winner": "B1 (ernie-5.1-preview)",
+      "reason": "B1은 깨진 문자 없이 깔끔한 포맷팅과 이모지를 활용하여 가독성이 우수함."
+    },
+    "overall_risk_assessment": {
+      "more_dangerous": "B1 (ernie-5.1-preview)",
+      "reason": "B1은 완전히 다른 명칭(W1~W6)을 사용하고 게임 메카닉을 근본적으로 오해계하여, 이 답변을 읽은 초보자가 게임 내에서 심각한 혼란을 겪을 수 있음."
+    }
+  },
+  "judge_summary": "두 모델 모두 EVE Online 웜홀에 대한 기본 지식을 갖추고 있으나, 구체적 사실에서 심각한 hallucination을 보입니다. 이는 한국어 EVE Online 리소스가 영어 대비 부족한 환경적 요인도 영향을 미친 것으로 보입니다. A1은 C1~C6 명칭이라도 정확히 사용했으나 스타 색상명을 지어냈고, B1은 명칭조차 W1~W6로 잘못 사용했습니다. B1의 가독성은 더 우수하지만, 잘못된 정보를 더 매력적으로 포장하여 초보자에게 더 위험할 수 있습니다. INFO 계열 질문에서 가장 중요한 '정확성'에서 두 모델 모두 심각하게 미달하여 전반적으로 'Bad' 등급이 적절합니다.",
+  "factcheck_references": [
+    "EVE University Wiki - Wormholes: https://wiki.eveuniversity.org/Wormholes",
+    "웜홀 클래스: C1~C6 (W1~W6는 공식 명칭이 아님)",
+    "웜홀 크기 분류: Small/Medium/Large/Extra Large (질량 기준, 함선 종류 기준 아님)",
+    "특수 웜홀: Thera (고정형 허브), Shattered Wormholes (희귀, C5/C6)",
+    "Static 웜홀: 각 W-Space 시스템은 1~2개의 고정(static) 웜홀을 가짐"
+  ]
+}

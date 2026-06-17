@@ -1,0 +1,422 @@
+{
+  "benchmark_version": "1.0",
+  "evaluation_metadata": {
+    "evaluation_date": "2026-06-17",
+    "patch_reference_date": "2026-06-17",
+    "judge_model": "manual_annotation_with_eve_university_cross_reference",
+    "calibration_version": "1.0",
+    "source_files": [
+      "evaluations/2026-06-07/task_01_eval.json",
+      "evaluations/2026-06-07/task_02_eval.json",
+      "evaluations/2026-06-07/task_03_eval.json",
+      "evaluations/2026-06-07/task_04_eval.json"
+    ]
+  },
+  "target_model": "example_regression_models",
+  "results": [
+    {
+      "question_id": "I-EXPLORE-WH01",
+      "model_id": "minimax-m2.7",
+      "model_answer_label": "예시1/A1",
+      "scores": {
+        "accuracy": 0.5,
+        "completeness": 3.0,
+        "source_reference": 0.0,
+        "clarity": 3.0
+      },
+      "weighted_score_5": 1.4,
+      "score_100": 28.0,
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": false,
+        "wrong_terminology": true,
+        "mechanic_error": false,
+        "translation_artifact": true,
+        "unsafe_advice": false,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": true
+      },
+      "reasoning": {
+        "structure": 3,
+        "logical_flow": 3,
+        "assumption_quality": 1,
+        "consistency": 2,
+        "comment": "클래스 분류 프레임은 있으나 허구 스타 색상명과 가짜 지명이 핵심 전제를 무너뜨림."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 1,
+        "evidence_validity": 1,
+        "external_reference": 0,
+        "comment": "출처가 없고 검증 불가능한 허구 정보가 포함됨."
+      },
+      "strengths": [
+        "C1~C6 기본 프레임 언급",
+        "Thera와 Shattered Wormholes 언급"
+      ],
+      "weaknesses": [
+        "클래스별 스타 색상 hallucination",
+        "가짜 지명과 깨진 문자",
+        "출처/기준일 누락"
+      ],
+      "feedback": "Bad 회귀 사례로 유지한다. Judge는 hallucination과 source omission을 반드시 감지해야 한다.",
+      "confidence": 0.95,
+      "needs_human_review": true
+    },
+    {
+      "question_id": "I-EXPLORE-WH01",
+      "model_id": "ernie-5.1-preview",
+      "model_answer_label": "예시1/B1",
+      "scores": {
+        "accuracy": 0.5,
+        "completeness": 2.0,
+        "source_reference": 0.0,
+        "clarity": 5.0
+      },
+      "weighted_score_5": 1.3,
+      "score_100": 26.0,
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": false,
+        "wrong_terminology": true,
+        "mechanic_error": true,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": true
+      },
+      "reasoning": {
+        "structure": 4,
+        "logical_flow": 4,
+        "assumption_quality": 1,
+        "consistency": 2,
+        "comment": "표현은 명확하지만 W1~W6와 함선 크기 제한 설명이 게임 메커닉과 맞지 않음."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 1,
+        "evidence_validity": 1,
+        "external_reference": 0,
+        "comment": "출처 없이 잘못된 명칭과 메커닉을 단정함."
+      },
+      "strengths": [
+        "가독성 좋은 표 구성",
+        "연결 유형을 구분하려는 시도"
+      ],
+      "weaknesses": [
+        "W1~W6 비표준 명칭",
+        "질량 제한을 함선 종류 제한으로 오해",
+        "Etherium Reach hallucination"
+      ],
+      "feedback": "Bad 회귀 사례로 유지한다. Judge는 wrong terminology와 mechanic error를 반드시 감지해야 한다.",
+      "confidence": 0.95,
+      "needs_human_review": true
+    },
+    {
+      "question_id": "I-EXPLORE-WH01",
+      "model_id": "gpt-5.5-instant",
+      "model_answer_label": "예시2/A1",
+      "scores": {
+        "accuracy": 4.5,
+        "completeness": 4.5,
+        "source_reference": 0.5,
+        "clarity": 5.0
+      },
+      "weighted_score_5": 3.75,
+      "score_100": 75.0,
+      "error_taxonomy": {
+        "hallucination": false,
+        "outdated_info": false,
+        "wrong_terminology": false,
+        "mechanic_error": false,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": false,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 5,
+        "logical_flow": 5,
+        "assumption_quality": 4.5,
+        "consistency": 5,
+        "comment": "질문의 모호성을 인지하고 분류 기준별로 답변함."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 4,
+        "evidence_validity": 5,
+        "external_reference": 0.5,
+        "comment": "주요 근거는 정확하지만 명시적 출처/패치 기준일이 부족함."
+      },
+      "strengths": [
+        "다층적 분류",
+        "hallucination 없음",
+        "요약이 명확함"
+      ],
+      "weaknesses": [
+        "출처/버전 정보 미기재",
+        "Thera 언급 누락"
+      ],
+      "feedback": "Good 회귀 사례로 유지한다. Judge는 높은 정확성과 source omission을 동시에 기록해야 한다.",
+      "confidence": 0.95,
+      "needs_human_review": false
+    },
+    {
+      "question_id": "I-EXPLORE-WH01",
+      "model_id": "claude-opus-4-8",
+      "model_answer_label": "예시2/B1",
+      "scores": {
+        "accuracy": 4.5,
+        "completeness": 4.0,
+        "source_reference": 0.5,
+        "clarity": 4.5
+      },
+      "weighted_score_5": 3.55,
+      "score_100": 71.0,
+      "error_taxonomy": {
+        "hallucination": false,
+        "outdated_info": false,
+        "wrong_terminology": false,
+        "mechanic_error": false,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": false,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 4.5,
+        "logical_flow": 4.5,
+        "assumption_quality": 4.5,
+        "consistency": 5,
+        "comment": "여러 분류 축과 추가 질문으로 모호성을 잘 처리함."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 4,
+        "evidence_validity": 5,
+        "external_reference": 0.5,
+        "comment": "주요 근거는 정확하지만 명시적 출처/패치 기준일이 부족함."
+      },
+      "strengths": [
+        "Thera와 Shattered/Drifter 언급",
+        "Low-class/High-class 맥락 제공",
+        "추가 질문 UX"
+      ],
+      "weaknesses": [
+        "연결 코드 수를 다소 과소 표현",
+        "출처/버전 정보 미기재"
+      ],
+      "feedback": "Good 회귀 사례로 유지한다. Judge는 정확성은 높게, source omission은 명확히 감점해야 한다.",
+      "confidence": 0.95,
+      "needs_human_review": false
+    },
+    {
+      "question_id": "A-LORE-WWB01",
+      "model_id": "claude-sonnet-4-6",
+      "model_answer_label": "질문1/A1",
+      "scores": {
+        "logical_reasoning": 3.5,
+        "data_usage": 2.0,
+        "depth": 4.0,
+        "limitation_awareness": 1.5
+      },
+      "weighted_score_5": 2.95,
+      "score_100": 59.0,
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": false,
+        "wrong_terminology": true,
+        "mechanic_error": false,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 4,
+        "logical_flow": 3.5,
+        "assumption_quality": 2,
+        "consistency": 3,
+        "comment": "WWB1과 WWB2를 분리해 큰 구조는 잡았지만, 두 전쟁의 세부 사실을 설명하는 과정에서 잘못된 위치, 약어 해석, 피해액 추산을 단정함."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 2,
+        "evidence_validity": 2,
+        "external_reference": 0,
+        "comment": "구체적인 인물과 전투를 많이 언급하지만 출처가 없고, 일부 핵심 수치와 명칭이 검증 자료와 맞지 않음."
+      },
+      "strengths": [
+        "WWB1과 WWB2를 모두 다루며 긴 역사적 흐름을 설명",
+        "IWI 자금, CO2 이탈, Deklein, Delve 재건, M2-XFE, 1DQ1-A 등 주요 키워드 다수 포함",
+        "초보자가 읽기 쉬운 섹션 구조"
+      ],
+      "weaknesses": [
+        "M-OEE8을 Pure Blind의 핵심 시스템처럼 설명한 위치 오류",
+        "PAPI 약어를 근거 없이 잘못 풀어 쓴 hallucination",
+        "M2-XFE 실제 화폐 환산 피해액을 과도하게 부풀려 단정",
+        "IWI를 RMT 기반 카지노로 단정해 뉘앙스가 부정확",
+        "출처와 추산치 한계 설명이 없음"
+      ],
+      "feedback": "분량과 커버리지는 좋지만 역사 벤치마크에서는 부정확한 수치와 약어 해석이 큰 감점 요소다. WWB1과 WWB2를 다룰 때 전투 위치, 피해액, 세력명은 출처 기준으로 더 보수적으로 써야 한다.",
+      "confidence": 0.86,
+      "needs_human_review": true
+    },
+    {
+      "question_id": "A-LORE-WWB01",
+      "model_id": "gpt-5.5",
+      "model_answer_label": "질문1/B1",
+      "scores": {
+        "logical_reasoning": 4.5,
+        "data_usage": 4.0,
+        "depth": 4.5,
+        "limitation_awareness": 4.0
+      },
+      "weighted_score_5": 4.3,
+      "score_100": 86.0,
+      "error_taxonomy": {
+        "hallucination": false,
+        "outdated_info": false,
+        "wrong_terminology": false,
+        "mechanic_error": false,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": false,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 4.5,
+        "logical_flow": 4.5,
+        "assumption_quality": 4.5,
+        "consistency": 4.5,
+        "comment": "World War Bee를 2016년 Casino War 중심으로 정의하고 WWB2를 후속 전쟁으로 구분해 질문의 모호성을 잘 처리함."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 4,
+        "evidence_validity": 4,
+        "external_reference": 0.5,
+        "comment": "주요 원인과 사건 연결이 검증 가능한 역사 서술과 대체로 일치하나, 명시적 출처 링크나 기준 자료는 없음."
+      },
+      "strengths": [
+        "WWB1과 WWB2를 명확히 구분",
+        "Viceroy Program, IWI, Lowsec Voltron, Aegis Sov, MBC 형성을 원인으로 잘 연결",
+        "SMA/Cloud Ring, CO2 이탈, M-OEE8, Deklein/VFK-IV, Saranen, Delve 이주를 전개 순서대로 설명",
+        "WWB2는 비교 섹션에서 필요한 만큼만 요약"
+      ],
+      "weaknesses": [
+        "출처/버전/참고 자료를 명시하지 않음",
+        "일부 사건의 수치 정보가 부족해 정량적 완전성은 제한적",
+        "커뮤니티 서사와 검증 사실의 경계를 더 분명히 표시하면 더 좋음"
+      ],
+      "feedback": "질문 의도에 가장 잘 맞는 답변이다. World War Bee의 기본 의미를 WWB1로 잡고, 발발 원인과 주요 전투를 안정적으로 정리했다. 명시적 출처와 일부 수치 보강이 있으면 Excellent에 가까워진다.",
+      "confidence": 0.9,
+      "needs_human_review": false
+    },
+    {
+      "question_id": "H-EXPLORE-LSC01",
+      "model_id": "grok-4.3",
+      "model_answer_label": "task_04/A",
+      "scores": {
+        "stepwise_clarity": 2.5,
+        "completeness": 2.0,
+        "audience_fit": 1.0,
+        "error_handling": 1.0,
+        "factual_safety": 0.5
+      },
+      "weighted_score_5": 1.4,
+      "score_100": 28.0,
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": false,
+        "wrong_terminology": true,
+        "mechanic_error": true,
+        "translation_artifact": true,
+        "unsafe_advice": true,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 3,
+        "logical_flow": 2,
+        "assumption_quality": 1,
+        "consistency": 2,
+        "comment": "사용자의 요구에 맞춘 듯 보이는 공략 형식은 있으나, 핵심 전제가 허구라 실전 가이드로 신뢰할 수 없다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 0,
+        "evidence_validity": 1,
+        "external_reference": 0,
+        "comment": "어떤 출처도 제시하지 않고 정확한 수치와 타이밍을 단정했다."
+      },
+      "strengths": [
+        "Sleeper Cache가 일반 탐사 사이트보다 위험하다는 점은 인지",
+        "Data/Relic Analyzer와 추진 모듈 필요성을 언급",
+        "가스와 구조물 위험을 피해야 한다는 방향성은 있음"
+      ],
+      "weaknesses": [
+        "가짜 구역 구조와 마지막 역장 기믹 생성",
+        "검증되지 않은 데미지 수치와 타이머 단정",
+        "초보자에게 위험한 MWD 조작법을 제시",
+        "RPCU/RDGU 역할과 실제 공략 흐름 오도",
+        "출처 없음"
+      ],
+      "feedback": "이 답변은 유창하지만 위험하다. Limited Sleeper Cache의 실제 구조와 Forcefield 기믹을 확인하지 않은 채 구체 수치와 조작법을 생성했다. HOWTO 안전성 벤치마크에서는 낮은 점수가 적절하다.",
+      "confidence": 0.92,
+      "needs_human_review": true
+    },
+    {
+      "question_id": "H-EXPLORE-LSC01",
+      "model_id": "gpt-5.5-instant",
+      "model_answer_label": "task_04/B",
+      "scores": {
+        "stepwise_clarity": 2.0,
+        "completeness": 2.0,
+        "audience_fit": 4.5,
+        "error_handling": 4.0,
+        "factual_safety": 4.5
+      },
+      "weighted_score_5": 3.4,
+      "score_100": 68.0,
+      "error_taxonomy": {
+        "hallucination": false,
+        "outdated_info": false,
+        "wrong_terminology": false,
+        "mechanic_error": false,
+        "translation_artifact": false,
+        "unsafe_advice": false,
+        "overconfident_answer": false,
+        "source_omission": false,
+        "ambiguous_question_missed": false
+      },
+      "reasoning": {
+        "structure": 3.5,
+        "logical_flow": 4,
+        "assumption_quality": 4.5,
+        "consistency": 4.5,
+        "comment": "사용자의 불가능한 안전 보장 요구를 적절히 제한하고, 허구 세부 수치를 피했다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 3,
+        "evidence_validity": 4,
+        "external_reference": 3,
+        "comment": "EVE University Wiki, Anoik.is, Signal Cartel 등을 확인하라고 제시했지만 직접 검증 내용은 부족하다."
+      },
+      "strengths": [
+        "100% 안전 보장 불가를 명확히 밝힘",
+        "Sleeper Cache가 일반 탐사 사이트보다 위험하다는 점을 초보자 관점에서 정확히 경고",
+        "검증되지 않은 세부 수치와 MWD 타이밍을 지어내지 않음",
+        "외부 공략 자료 확인을 권장"
+      ],
+      "weaknesses": [
+        "사용자가 요구한 구체 메커닉 설명에는 충분히 답하지 못함",
+        "RPCU/RDGU/Forcefield/Plasma Chamber의 실제 역할을 요약하지 않음",
+        "직접 링크와 기준일이 없음"
+      ],
+      "feedback": "안전성 측면에서는 A보다 훨씬 낫다. 다만 벤치마크의 HOWTO 질문으로는 EVE University 기준의 핵심 오브젝트 역할을 간단히라도 요약했어야 한다. '모른다'에서 멈추지 않고 검증된 범위의 안전한 개요를 제공하면 Good 이상이 된다.",
+      "confidence": 0.9,
+      "needs_human_review": false
+    }
+  ]
+}

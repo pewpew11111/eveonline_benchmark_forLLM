@@ -1,0 +1,165 @@
+{
+  "benchmark_version": "1.0",
+  "language": "ko",
+  "scope": "single_turn_text",
+  "items": [
+    {
+      "question_id": "I-EXPLORE-WH01",
+      "question": "이브온라인에서 웜홀 종류는 몇가지가 있지?",
+      "main_case": "INFO",
+      "sub_element": "EXPLORE",
+      "difficulty": "beginner",
+      "ambiguity_level": "high",
+      "requires_current_patch": false,
+      "rubric_profile": "INFO_STRICT_FACTCHECK",
+      "source_pack": [
+        {
+          "label": "EVE University Wiki - Wormholes",
+          "url": "https://wiki.eveuniversity.org/Wormholes",
+          "priority": 3
+        },
+        {
+          "label": "EVE University Wiki - Thera",
+          "url": "https://wiki.eveuniversity.org/Thera",
+          "priority": 3
+        }
+      ],
+      "gold_answer": {
+        "must_include": [
+          "일반적인 웜홀 공간 클래스는 C1~C6의 6개로 설명할 수 있다.",
+          "질문의 '종류'가 웜홀 공간 클래스인지, 웜홀 연결 코드인지, 통과 질량/크기 기준인지에 따라 답이 달라진다.",
+          "특수 케이스로 Thera, Shattered/C13, Drifter Wormhole Systems 등을 별도 언급할 수 있다.",
+          "웜홀 연결 코드는 K162, N110, H296 등 다수 존재하며 목적지, 수명, 질량 제한이 다르다."
+        ],
+        "must_not_include": [
+          "C1~C6을 W1~W6로 부른다고 단정",
+          "클래스별 공식 스타 색상명 주장",
+          "Etherium Reach를 웜홀 종류로 제시",
+          "웜홀 통과 제한을 단순 함선 종류 제한으로만 설명"
+        ],
+        "ideal_answer_summary": "가장 일반적인 답은 C1~C6의 6개 클래스다. 다만 '종류'의 기준을 넓히면 Thera, Shattered/C13, Drifter 같은 특수 시스템과 K162/N110/H296 등 웜홀 연결 코드, Small/Medium/Large/XL 같은 질량 제한 기준까지 나누어 설명해야 한다."
+      },
+      "acceptable_variants": [
+        "C1~C6만 답하되, 특수 웜홀과 연결 코드는 별도 기준이라고 덧붙이는 답변",
+        "먼저 질문의 모호성을 설명한 뒤 클래스/연결 코드/질량 제한 기준으로 나누는 답변",
+        "Thera를 C1~C6과 동등한 클래스가 아니라 특수 시스템으로 구분하는 답변"
+      ],
+      "known_traps": [
+        "W1~W6라는 비표준 명칭 사용",
+        "화이트 스타/블루 스타 같은 허구 클래스명 생성",
+        "깨진 번역 문자 또는 한중 혼합 출력",
+        "출처 없이 수치나 분류를 단정"
+      ]
+    },
+    {
+      "question_id": "A-LORE-WWB01",
+      "question": "이브온라인의 world war bee에 대해 자세히 설명해줘. 어떤 이유에서 전쟁이 발발했고, 어떤 주요 전투들이 발생했는지 등.",
+      "main_case": "ANALYZE",
+      "sub_element": "LORE",
+      "difficulty": "advanced",
+      "ambiguity_level": "medium",
+      "requires_current_patch": false,
+      "rubric_profile": "ANALYZE_HISTORY_FACTCHECK",
+      "source_pack": [
+        {
+          "label": "EVE Online / CCP battle reports and news",
+          "url": "https://www.eveonline.com/news",
+          "priority": 1
+        },
+        {
+          "label": "Guinness World Records / FWST-8 and M2-XFE references",
+          "url": "https://www.guinnessworldrecords.com/",
+          "priority": 2
+        },
+        {
+          "label": "EVE community history references for World War Bee / Casino War",
+          "url": "https://wiki.eveuniversity.org/",
+          "priority": 3
+        }
+      ],
+      "gold_answer": {
+        "must_include": [
+          "World War Bee는 보통 2016년 Casino War를 가리키며, 2020~2021년 전쟁은 World War Bee 2 또는 Beeitnam으로 구분된다.",
+          "WWB1의 핵심 원인은 Imperium/Goonswarm의 북부 패권, Viceroy Program에 대한 반발, IWantISK/IWI 카지노 자금, Lowsec Voltron 및 Moneybadger Coalition 형성, Aegis Sov 환경에서의 방어 피로다.",
+          "WWB1 주요 사건으로 SMA/Cloud Ring 압박, CO2 이탈, M-OEE8, Deklein/VFK-IV 상실, Saranen 철수, Delve 이주를 설명해야 한다.",
+          "WWB2를 함께 다룰 경우 PAPI의 Delve 침공, FWST-8, M2-XFE, 1DQ1-A 포위, PAPI 철수와 Imperium 생존/반격을 구분해서 설명해야 한다.",
+          "피해액과 참여자 수 같은 수치는 추산치이며 출처와 기준에 따라 달라진다고 밝혀야 한다."
+        ],
+        "must_not_include": [
+          "PAPI 약어를 근거 없이 잘못 풀어 쓰기",
+          "M-OEE8의 지역을 Pure Blind로 단정",
+          "M2-XFE 피해액을 수백만~수천만 달러로 단정",
+          "IWI 카지노를 곧바로 RMT 사이트로 단정",
+          "WWB1과 WWB2의 원인, 참전 세력, 전투를 구분 없이 섞어 설명"
+        ],
+        "ideal_answer_summary": "좋은 답변은 먼저 World War Bee가 2016년 Casino War를 주로 뜻하고 WWB2는 별도 후속 전쟁임을 구분한다. 그 다음 WWB1의 원인으로 Imperium의 패권과 Viceroy Program, IWI 자금, Lowsec Voltron/MBC 형성, Aegis Sov 방어 피로를 설명하고, Cloud Ring/SMA, CO2 이탈, M-OEE8, Deklein/VFK-IV, Saranen, Delve 이주를 순서대로 정리한다. WWB2는 별도 섹션에서 PAPI, FWST-8, M2-XFE, 1DQ1-A, PAPI 철수를 간략히 비교한다."
+      },
+      "acceptable_variants": [
+        "WWB1만 집중적으로 설명하고 WWB2는 후속 전쟁으로 짧게 구분하는 답변",
+        "WWB1과 WWB2를 모두 자세히 설명하되 두 전쟁의 원인과 주요 전투를 명확히 분리하는 답변",
+        "피해 규모와 참여자 수를 범위 또는 추산치로 제시하고 출처 의존성을 명시하는 답변"
+      ],
+      "known_traps": [
+        "World War Bee와 World War Bee 2를 같은 전쟁처럼 혼합",
+        "PAPI 약어 또는 MBC 구성 세력을 꾸며내기",
+        "전투 위치와 연도 오류",
+        "실제 화폐 환산 피해액 과장",
+        "출처 없이 커뮤니티 서사를 단정"
+      ]
+    },
+    {
+      "question_id": "H-EXPLORE-LSC01",
+      "question": "이브 온라인을 이제 막 시작한 탐사 초보 유저입니다. 우주를 돌아다니다가 시그니처를 스캔했더니 'Limited Sleeper Cache(제한된 슬리퍼 캐시)'라는 탐사 사이트가 나왔습니다. 일반적인 데이터/유물 사이트와는 다르게 가스 구름도 보이고 폭탄 같은 것도 있어서 진입하기가 너무 무서운데요, 초보자가 타는 프리깃 함선으로 이 사이트에 들어가서 단 하나의 유물 컨테이너도 놓치지 않고 100% 완벽하게 안전하게 클리어할 수 있는 단계별 해킹 및 주행 공략을 알려주세요. 특히 내부에서 등장하는 가스 클라우드와 구조물들이 함선에 정확히 어떤 메커닉으로 데미지를 주는지, 그리고 마지막 구역에서 쉴드(역장)가 쳐지는 기믹을 실패 없이 파훼하려면 MWD를 어떻게 조작해야 하는지 아주 구체적이고 상세하게 설명해 주십시오. 조금이라도 중요한 상세 기믹이나 조건이 있다면 하나도 누락하지 말고 최대한 길고 자세하게 서술해 주세요.",
+      "main_case": "HOWTO",
+      "sub_element": "EXPLORE",
+      "difficulty": "advanced",
+      "ambiguity_level": "low",
+      "requires_current_patch": true,
+      "rubric_profile": "HOWTO_SAFETY_FACTCHECK",
+      "source_pack": [
+        {
+          "label": "EVE University Wiki - Limited Sleeper Cache",
+          "url": "https://wiki.eveuniversity.org/Limited_Sleeper_Cache",
+          "priority": 2
+        },
+        {
+          "label": "EVE University Wiki - Sleeper Cache",
+          "url": "https://wiki.eveuniversity.org/Sleeper_Cache",
+          "priority": 3
+        }
+      ],
+      "gold_answer": {
+        "must_include": [
+          "100% 완벽하게 안전한 클리어는 보장할 수 없으며 초보 프리깃에게 위험하다고 명시해야 한다.",
+          "Limited Sleeper Cache는 일반 데이터/유물 사이트보다 어렵고, Data Analyzer와 Relic Analyzer가 모두 필요하며 프리깃 진입 제한이 있다.",
+          "사이트는 입구 해킹 후 하나의 주 포켓으로 들어가며, 주요 요소는 여러 Storage Depot, Remote Pressure Control Unit, Remote Defense Grid Unit, Pressure Cloud, Unstable Plasma Chamber, Forcefield Generator다.",
+          "Remote Pressure Control Unit은 wreck 주변 위험 구름 처리와 관련되고, Remote Defense Grid Unit은 forcefield가 보호하는 depot 처리와 관련된다.",
+          "Unstable Plasma Chamber는 속도와 근접 거리에 민감한 proximity mine처럼 동작하므로 무분별한 MWD 사용은 위험하다고 설명해야 한다.",
+          "Forcefield는 마지막 구역에서 점점 좁아지는 장판이 아니라 특정 depot 접근 또는 RDGU 실패와 관련된 장애물로 설명해야 한다.",
+          "검증된 최신 공략과 피팅을 확인하고, 충분한 탱크/해킹 스킬/수동 조종 경험 없이는 포기하거나 cargo scan 후 선별적으로 진행하라고 안내해야 한다."
+        ],
+        "must_not_include": [
+          "단 하나의 컨테이너도 놓치지 않는 100% 안전 클리어를 보장",
+          "Limited Sleeper Cache를 3~4개 구역 또는 마지막 별도 구역으로 단정",
+          "가스 클라우드가 30~40초마다 팽창한다고 단정",
+          "Force Field가 45~60초 후 좁아지고 MWD 온오프 타이밍으로 피하는 기믹이라고 설명",
+          "검증되지 않은 정확한 데미지 타입/수치를 단정",
+          "구조물을 절대 먼저 해킹하지 말라는 식으로 실제 RPCU/RDGU 역할을 오도"
+        ],
+        "ideal_answer_summary": "좋은 답변은 사용자의 '100% 안전' 전제를 먼저 거절하고, Limited Sleeper Cache가 초보용 일반 탐사 사이트가 아니라는 점을 설명한다. 이후 EVE University 기준으로 프리깃 제한, Data/Relic Analyzer 필요, 입구 Hyperfluct Generator, 주 포켓의 Storage Depot/RPCU/RDGU/Pressure Cloud/Unstable Plasma Chamber/Forcefield Generator를 구분한다. 정확한 최신 수치와 경로는 출처 확인을 요구하고, 무분별한 MWD 사용과 forcefield 기믹에 대한 허구 설명을 피해야 한다."
+      },
+      "acceptable_variants": [
+        "구체 경로 대신 위험 요소와 준비 조건 중심으로 설명하며 최신 공략 링크 확인을 권하는 답변",
+        "초보자에게 사이트 포기 또는 선별적 컨테이너 루팅을 권하고, 100% 안전 보장은 거절하는 답변",
+        "EVE University의 Limited Sleeper Cache 공략을 기준으로 주요 오브젝트 역할만 요약하는 답변"
+      ],
+      "known_traps": [
+        "정확한 기믹을 모른 채 가짜 방/가짜 타이머/가짜 MWD 조작법을 생성",
+        "위험한 사이트를 100% 안전하다고 보장",
+        "Forcefield를 별도 마지막 구역 장판처럼 설명",
+        "가스 데미지 타입과 수치를 출처 없이 단정",
+        "초보자에게 손실 가능성을 낮춰 말함"
+      ]
+    }
+  ]
+}
