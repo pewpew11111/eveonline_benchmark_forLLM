@@ -116,6 +116,8 @@ Phase 5: Aggregation → Calculate averages/failure rates, verify regression set
 
 이 프로젝트는 **EVE Online**이라는 복잡한 MMORPG 도메인에서 LLM의 응답 품질을 체계적으로 평가하기 위한 벤치마크입니다.
 
+> **참고**: 평가 대상 모델은 웹 검색(web search/retrieval) 기능 없이, 순수 사전 학습된 파라미터만으로 응답을 생성한 결과를 평가합니다. 검색 증강 생성(RAG) 또는 브라우징 기반 답변은 현재 평가 범위에 포함되지 않습니다.
+
 단순 평균 점수 산출이 아닌, **다음 실패 유형을 모델별로 드러내는 것**에 초점을 둡니다:
 
 | 실패 유형 | 설명 |

@@ -1,0 +1,192 @@
+{
+  "benchmark_version": "1.0",
+  "evaluation_metadata": {
+    "evaluation_date": "2026-06-17",
+    "patch_reference_date": "2026-06-17",
+    "judge_model": "deepseek-v4-flash_annotation_with_eve_university_cross_reference",
+    "calibration_version": "1.0"
+  },
+  "target_model": "deepseek-v4-pro_comparison",
+  "question_id": "I-EXPLORE-SC02",
+  "main_case": "PLAN",
+  "sub_element": "EXPLORE",
+  "difficulty": "intermediate",
+  "question": "Standard Sleeper Cache(표준 슬리퍼 캐시) 사이트를 솔로로 공략하려고 준비 중인 유저입니다. 이 사이트는 High 코스와 Low 코스로 나뉜다고 들었는데, 저는 더 직관적이고 진행이 수월한 High(상단) 코스를 선택해 진행하려고 합니다. 제가 사이트에 진입한 순간부터 마지막 숨겨진 요소까지 하나도 놓치지 않고 최대의 수익을 올릴 수 있도록 완벽한 마스터 플랜을 짜주세요. 질문이 구체적인 만큼 답변도 최대한 상세하고 길게 작성해 주셔야 합니다. 1번부터 순서대로 컨테이너를 공략하는 과정에서 발생할 수 있는 '시간 제한 타임아웃 기믹'의 정확한 조건(초 단위 수치 포함)과 대처법, 그리고 중반부에 등장하는 리프트(Rift)를 보정(Calibrate)하기 위해 터렛을 비활성화하고 좌표를 입력하는 상세 메커닉을 단계별로 누락 없이 포함해 주십시오. 특히, 이 사이트에서 아는 사람들만 챙긴다는 '보너스 룸(Bonus Room)'을 강제로 개방하여 진입하는 특수한 기믹(의도적 실패 및 로컬 채팅창 모니터링 등)의 메커닉과, 보너스 룸 내부에 진입했을 때 주어지는 전체 제한 시간 및 특정 컨테이너(15번~20번)들을 해킹하여 타이머를 조작하고 초기화하는 운용 순서를 아주 디테일하게 설계해 주세요.",
+  "gold_answer": {
+    "summary": "Standard Sleeper Cache High 코스는 입구 진입 후 1, 2, 3번 유물 박스 루팅 → 4A 데이터 캔 60초 내 해킹(타이머 기믹) → 4B 오픈 → 5번 해킹으로 터렛 정지 → 6번 컨테이너 3개에서 좌표 획득 후 고출력 컨테이너에 입력해 리프트 활성화 → 리프트 통과 후 7번 RDGU 즉시 해킹(터렛 1기 정지) → 남은 1기 터렛 드론으로 제거 → 8~13번 박스 루팅 → 14번 박스 의도적 해킹 실패(로컬 빨간 글씨 확인) → 즉시 100~120km 수직 상승 대피 → 생성된 리프트로 보너스 룸 진입 → 15번 데이터 캔 해킹 시작(180초 타이머 시작) → 16, 17번 해킹 → 시간 부족 시 18번 해킹(타이머 3분 리셋) → 19, 20번 해킹 완료. 보너스 룸은 NPC/터렛 위험이 없는 순수 해킹 속도 테스트 구역이다.",
+    "known_traps": [
+      "보너스 룸에 강력한 랫이나 센트리 터렛이 있다고 허구 생성",
+      "4A 박스 제한 시간(60초)이나 보너스 룸 제한 시간(180초) 수치 오류",
+      "터렛 비활성화를 좌표 입력 방식으로 설명",
+      "리프트 보정 좌표를 X/Y 슬라이더 입력 등 허구 메커닉으로 설명",
+      "1번 컨테이너부터 글로벌 타이머 작동 등 실제와 다른 구조 창작"
+    ]
+  },
+  "evaluations": [
+    {
+      "model_id": "deepseek-v4-pro",
+      "model_answer_label": "A",
+      "source_pack_note": "yt_sum: chloroken_sleeper_cache_guide_2025",
+      "raw_scores": {
+        "executability": 1.5,
+        "specificity": 3.0,
+        "efficiency": 1.5,
+        "alternatives": 1.0
+      },
+      "weighted_score_5": 1.9,
+      "score_100": 38.0,
+      "final_grade": "Poor (2/5)",
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": true,
+        "wrong_terminology": true,
+        "mechanic_error": true,
+        "translation_artifact": false,
+        "unsafe_advice": true,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "errors_detected": [
+        "Hallucinated_Structure: 첫 번째 컨테이너 해킹 시 글로벌 타이머 작동 기믹은 실제 Standard Sleeper Cache와 다름",
+        "Hallucinated_Mechanic: 중앙 허브 의도적 해킹 실패 후 재해킹으로 자폭 타이머 지연/보너스 룸 플래그 활성화 기믹은 실제와 다름",
+        "Hallucinated_Mechanic: Rift 보정을 4개 터렛 콘솔 해킹 → 10분 제한 좌표 입력으로 설명했으나 실제 공략 구조와 다름",
+        "Hallucinated_Mechanic: 보너스 룸 개방을 Rift Calibration 마지막 좌표 의도적 오입력으로 설명했으나 실제는 14번 박스 해킹 실패 → 수직 대피 기믹과 다름",
+        "Timer_Error: 보너스 룸 제한 시간을 120초로 명시했으나 실제는 180초",
+        "Missing_Key_Elements: 4A 60초 타이머 기믹, 7번 RDGU, 8~13번 루팅, 14번 실패 후 100~120km 대피, 18번 타이머 리셋 기믹이 모두 누락",
+        "Unsafe_Advice: 실제와 다른 사이트 구조를 단정적으로 제시해 혼란 초래"
+      ],
+      "rationale": {
+        "executability": "구체적인 단계가 많지만 실제 사이트 구조와 일치하지 않아 실행 가능성이 낮다. 잘못된 타이머와 터렛 기믹을 제시하고 있다.",
+        "specificity": "단계별로 상세하게 서술되어 있으나 상당수가 허구에 기반한다. 구체성 자체는 높지만 실효성이 없다.",
+        "efficiency": "보너스 룸을 위해 메인 보상을 버리는 전략 자체는 개념적으로 타당하나, 잘못된 단계 설계로 인해 효율성을 평가하기 어렵다.",
+        "alternatives": "Low 코스와의 차이점을 언급하지 않았고, 고장/실패 시 대처법이 구체적이지 않다."
+      },
+      "reasoning": {
+        "structure": 3.5,
+        "logical_flow": 3.0,
+        "assumption_quality": 1.0,
+        "consistency": 2.5,
+        "comment": "단계 구성과 흐름은 설득력 있게 읽히지만, 핵심 전제(사이트 구조와 기믹)가 실제와 맞지 않아 전체 신뢰도가 낮다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 0,
+        "evidence_validity": 0,
+        "external_reference": 0,
+        "comment": "어떤 출처(패치 기준, wiki 링크 등)도 제시하지 않았고, 모든 수치와 기믹을 단정적으로 서술했다."
+      },
+      "strengths": [
+        "High 코스만 집중적으로 다루겠다고 명시해 방향성이 명확함",
+        "단계별 서술 형식이 체계적으로 구성됨",
+        "의도적 실패 컨셉(메인 보상 포기 → 보너스 룸)을 이해하고 있음",
+        "보너스 룸 내 컨테이너 타이머 조작 개념을 포함함"
+      ],
+      "weaknesses": [
+        "실제 Standard Sleeper Cache 공략 구조를 전혀 반영하지 못함",
+        "4A 60초 타이머, 5번 터렛 오프, 7번 RDGU, 8~13번 루팅, 14번 수직 대피 등 핵심 기믹 다수 누락",
+        "터렛 비활성화를 4개 콘솔 해킹으로 설명(실제는 5번 해킹 + 7번 RDGU 순서)",
+        "보너스 룸 제한 시간 120초는 실제 180초와 다름",
+        "Hull 탱킹/캡 부스터 필요성만 강조하고 버퍼 피팅과 스피드 탱킹의 실제 필요 조건을 설계에 반영하지 못함"
+      ],
+      "feedback": "이 답변은 유창하게 읽히는 '그럴듯한' 공략을 생성했지만, 실제 Standard Sleeper Cache(High 코스)의 공략 구조와 거의 일치하지 않는다. 특히 4A 60초 타이머, 5번 터렛 오프, 7번 RDGU, 14번 해킹 실패 후 100~120km 수직 대피, 18번 타이머 리셋 등 핵심 기믹이 전혀 포함되지 않았다. PLAN 평가에서는 검증 가능한 구체성과 정확성이 중요한데, 생성된 세부사항이 실제와 다를 경우 오히려 실행 가능성을 심각하게 떨어뜨린다.",
+      "confidence": 0.88,
+      "needs_human_review": true
+    },
+    {
+      "model_id": "deepseek-v4-pro-thinking",
+      "model_answer_label": "B",
+      "source_pack_note": "yt_sum: chloroken_sleeper_cache_guide_2025",
+      "raw_scores": {
+        "executability": 1.0,
+        "specificity": 2.5,
+        "efficiency": 1.0,
+        "alternatives": 0.5
+      },
+      "weighted_score_5": 1.3,
+      "score_100": 26.0,
+      "final_grade": "Bad (1/5)",
+      "error_taxonomy": {
+        "hallucination": true,
+        "outdated_info": true,
+        "wrong_terminology": true,
+        "mechanic_error": true,
+        "translation_artifact": false,
+        "unsafe_advice": true,
+        "overconfident_answer": true,
+        "source_omission": true,
+        "ambiguous_question_missed": false
+      },
+      "errors_detected": [
+        "Hallucinated_Entire_Structure: 사이트 구조를 Alpha/Beta Coordination Database, X/Y 좌표 슬라이더, Security Corridor Hub, High/Low Security Passage, Ancient Sentry Gun 등으로 설명했으나 이는 Standard Sleeper Cache의 실제 구조와 다름",
+        "Hallucinated_Mechanic: 180초 Rift Destabilization Timer가 첫 방 진입 시 Alpha 해킹과 동시에 시작된다고 설명했으나 실제와 다름",
+        "Hallucinated_Mechanic: High 보안 복도에 터렛 컨트롤 콘솔 해킹 → 120초 동안 터렛 비활성화 기믹은 실제와 다름",
+        "Hallucinated_Mechanic: 메인 리프트 의도적 해킹 실패 → 20초 폭발 카운트다운 → 6,000 써멀 피해 → 벽이 뚫리며 보너스 룸 게이트 활성화는 실제와 다름",
+        "Hallucinated_Mechanic: 보너스 룸 컨테이너 15~20번의 타이머 효과(20번 +60초, 19번 +30초, 18번 +15초, 17번 -30초, 16번 +0초, 15번 정지)는 실제 18번 리셋 기믹과 완전히 다름",
+        "Timer_Error: 보너스 룸 초기 제한 시간을 180초로 올바르게 제시했으나 컨테이너별 타이머 변동 효과는 모두 허구",
+        "Missing_Key_Elements: 4A 60초 타이머, 5번 터렛 오프, 6번 좌표 수집, 7번 RDGU, 8~13번 루팅, 14번 의도적 실패 → 100~120km 대피 누락",
+        "Cross_Site_Contamination: Limited Sleeper Cache와 Standard Sleeper Cache의 기믹을 혼동한 것으로 보임"
+      ],
+      "rationale": {
+        "executability": "설명된 사이트 구조가 실제 Standard Sleeper Cache와 완전히 달라 실행이 불가능하다. X/Y 슬라이더, 보안 복도, Ancient Sentry Gun 등은 해당 사이트에 존재하지 않는다.",
+        "specificity": "숫자와 용어를 많이 사용해 구체적으로 보이지만, 거의 모든 구체적 수치와 단계가 허구에 기반한다.",
+        "efficiency": "사이트 구조 자체를 잘못 이해하고 있어 효율성 평가가 무의미하다. 실제 사이트와 다른 경로를 제시하고 있다.",
+        "alternatives": "일부러 실패하는 전략은 언급했지만 대안이나 실패 시 대처가 부족하다. 특히 로컬 채팅 경고의 중요성을 전혀 강조하지 않았다."
+      },
+      "reasoning": {
+        "structure": 3.0,
+        "logical_flow": 2.5,
+        "assumption_quality": 0.5,
+        "consistency": 2.0,
+        "comment": "질문 형식에 맞춰 잘 구조화된 공략처럼 보이지만, Low 코스와 High 코스가 실제와 다르게 그려졌으며 핵심 기믹 대부분이 창작되었다."
+      },
+      "rationale_assessment": {
+        "evidence_provided": 0,
+        "evidence_validity": 0,
+        "external_reference": 0,
+        "comment": "출처나 패치 기준일이 전혀 없으며, 모든 수치와 타이머, 기믹을 검증 없이 단정했다. EVE University Wiki 같은 기본 참조조차 언급하지 않았다."
+      },
+      "strengths": [
+        "보너스 룸 초기 제한 시간 180초는 실제와 일치함",
+        "의도적 실패로 보너스 룸을 여는 컨셉을 이해하고 있음",
+        "Step-by-step 형식이 체계적으로 구성됨",
+        "함선 피팅(버퍼, 써멀 저항)에 대한 기본적인 고려가 있음"
+      ],
+      "weaknesses": [
+        "Standard Sleeper Cache의 실제 구조와 전혀 다른 가상의 사이트를 설명함(Alpha/Beta DB, Security Corridor, Ancient Sentry 등)",
+        "4A 60초 타이머 기믹, 5번 터렛 오프, 7번 RDGU 등 핵심 요소 전부 누락",
+        "보너스 룸 컨테이너 타이머 효과(20번 +60초, 17번 -30초 등)가 모두 허구",
+        "로컬 채팅 경고(빨간 글씨) 확인과 14번 해킹 실패 후 수직 대피 기믹 미포함",
+        "High 코스와 Low 코스의 실제 차이점을 설명하지 못함",
+        "Limited Sleeper Cache와 Standard Sleeper Cache를 혼동한 흔적이 있음"
+      ],
+      "feedback": "이 답변은 Answer A보다 훨씬 더 많은 허구적 요소를 포함한다. Alpha/Beta 데이터베이스, X/Y 좌표 슬라이더, 보안 복도와 Ancient Sentry Gun, 20초 폭발 카운트다운 등은 Standard Sleeper Cache의 실제 메커닉이 아니라 다른 사이트(또는 완전히 창작된 구조)를 설명하고 있다. 보너스 룸 초기 180초 하나만 맞았을 뿐, 컨테이너별 타이머 효과는 모두 허구다. PLAN 평가에서 이 수준의 구조적 오류는 실행 가능성을 0에 가깝게 만든다.",
+      "confidence": 0.92,
+      "needs_human_review": true
+    }
+  ],
+  "comparison_analysis": {
+    "accuracy": {
+      "winner": "A (deepseek-v4-pro)",
+      "reason": "A는 High 코스에 집중하고 터렛 비활성화/좌표 입력/보너스 룸 진입이라는 큰 흐름은 유지한 반면, B는 Alpha/Beta DB, X/Y 슬라이더, Security Corridor 등 실제 사이트와 무관한 구조를 생성했다."
+    },
+    "safety": {
+      "winner": "Neither",
+      "reason": "두 답변 모두 검증되지 않은 수치와 타이머를 단정적으로 제시해 사용자에게 위험할 수 있다. B가 더 많은 허구를 포함해 위험도가 높다."
+    },
+    "specificity": {
+      "winner": "A on verisimilitude, neither on correctness",
+      "reason": "A는 그럴듯한 공략처럼 읽히지만 실제 구조와 맞지 않는다. B는 더 많은 구체 수치를 포함했으나 그만큼 더 많은 허구를 생성했다."
+    },
+    "overall": {
+      "winner": "A (38.0 vs 26.0)",
+      "reason": "A가 High 코스 공략의 큰 그림(터렛 정지, 좌표 입력, 보너스 룸 선택)에서 상대적으로 덜 벗어났다. 그러나 두 답변 모두 실질적인 PLAN 실행 기준으로는 Poor 이하다."
+    }
+  },
+  "judge_summary": "task_05는 Standard Sleeper Cache High 코스의 실제 공략 구조를 정확히 아는지 테스트한다. 두 모델 모두 질문이 요구하는 '구체성'에 부응하려다 실제 사이트 기믹과 다른 가상의 메커닉을 대량 생성했다. Answer A는 High 코스의 기본 흐름(터렛 처리 → 좌표 입력 → 보너스 룸 진입)이 상대적으로 덜 왜곡되었으나 4A 60초, 7번 RDGU, 14번 수직 대피, 18번 리셋 등 핵심 기믹을 모두 놓쳤다. Answer B는 사이트 구조 자체를 재창작(Alpha/Beta DB, X/Y 슬라이더, Security Corridor, Ancient Sentry)해 실제와 가장 동떨어진 답변을 생성했다. 두 답변 모두 PLAN 평가에서 Poor 이하로, Hallucination과 Mechanic Error가 가장 심각한 실패 유형이다.",
+  "factcheck_references": [
+    "yt_sum: chloroken_sleeper_cache_guide_2025 - Standard Sleeper Cache 구조 및 공략 상세",
+    "Standard Sleeper Cache High/Low 코스 분기, 4A 60초 타이머, 5번 터렛 오프, 6번 좌표 수집, 7번 RDGU, 보너스 룸 14번 의도적 실패 → 100~120km 수직 대피 기믹 포함",
+    "보너스 룸: 15번 데이터 캔 해킹 시작(180초), 16, 17, 18번(타이머 3분 리셋), 19, 20번 순서",
+    "보너스 룸은 전투 위험 없이 해킹 속도만 테스트하는 구역"
+  ]
+}
