@@ -4,15 +4,9 @@
 >
 > 한국어 단일턴 텍스트 환경에서 EVE Online 도메인 질문에 대한 LLM 응답 품질을 재현 가능하게 평가하는 벤치마크 프로젝트
 
----
-
-**English** · [한국어](#-----1)
-
----
-
-## Overview
-
-This project provides a systematic benchmark to evaluate how well LLMs understand and respond to questions about **EVE Online**, a complex MMORPG known for its steep learning curve and deep gameplay mechanics.
+<details>
+  <summary>Click to expand English README</summary>
+    This project provides a systematic benchmark to evaluate how well LLMs understand and respond to questions about **EVE Online**, a complex MMORPG known for its steep learning curve and deep gameplay mechanics.
 
 The evaluation focuses on identifying **specific failure types** rather than just producing average scores:
 
@@ -113,6 +107,7 @@ Phase 5: Aggregation → Calculate averages/failure rates, verify regression set
 - [ESI (EVE Swagger Interface)](https://esi.evetech.net/)
 
 ---
+</details>
 
 ## 개요
 
